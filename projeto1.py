@@ -1,5 +1,5 @@
 # Ítalo Felipe | Rafael de Araujo | Samuel Nunes | João Pedro
-from aulagit.operacoesbd import * 
+from operacoesbd import * 
 from dotenv import load_dotenv
 import os
 reclamacoes = []
@@ -11,7 +11,7 @@ def mostrar_menu():
     print("3 - Pesquisar reclamação")
     print("4 - Atualizar reclamação")
     print("5 - Remover reclamação")
-    print("6 - Quantidade de reclamações")
+    print("6 - Quantidade de reclamações"
     print("7 - Sair")
 
 
