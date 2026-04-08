@@ -1,5 +1,5 @@
 # Ítalo Felipe | Rafael de Araujo | Samuel Nunes | João Pedro
-from aulagit.operacoesbd import * 
+from operacoesbd import * 
 from dotenv import load_dotenv
 import os
 reclamacoes = []
