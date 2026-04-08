@@ -11,7 +11,7 @@ def mostrar_menu():
     print("3 - Pesquisar reclamação")
     print("4 - Atualizar reclamação")
     print("5 - Remover reclamação")
-    print("6 - Quantidade de reclamações"
+    print("6 - Quantidade de reclamações")
     print("7 - Sair")
 
 
