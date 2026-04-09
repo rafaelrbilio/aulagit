@@ -1,4 +1,4 @@
-# Ítalo Felipe | Rafael de Araujo | Samuel Nunes | João Pedro
+# Ítalo Felipe | Rafael de Araujo | Samuel Nunes | João Pedro | Julian Vilar
 from operacoesbd import * 
 from dotenv import load_dotenv
 import os
