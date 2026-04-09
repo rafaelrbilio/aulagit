@@ -17,7 +17,7 @@ def inicializarTabela(connection):
     try:
         cursor = connection.cursor()
         sql = """
-        CREATE TABLE IF NOT EXISTS equipamentos (
+        CREATE TABLE IF NOT EXISTS reclamacoes (
             código INT AUTO_INCREMENT PRIMARY KEY,
             reclamação VARCHAR(100) NOT NULL
         )

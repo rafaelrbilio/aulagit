@@ -1,4 +1,4 @@
-# Ítalo Felipe | Rafael de Araujo | Samuel Nunes | João Pedro
+# Ítalo Felipe | Rafael de Araujo | Samuel Nunes | João Pedro | Julian Vilar
 from operacoesbd import * 
 from dotenv import load_dotenv
 import os
@@ -18,7 +18,7 @@ def mostrar_menu():
 def registrar_reclamacao(conexao):
     texto = input("Digite a reclamação: ")
 
-    sql = 'INSERT INTO equipamentos(reclamação) VALUES (%s)' 
+    sql = 'INSERT INTO reclamacoes(reclamação) VALUES (%s)' 
     dados = (texto,)
 
     insertNoBancoDados(conexao,sql,dados)
@@ -26,7 +26,7 @@ def registrar_reclamacao(conexao):
     print('Reclamação cadastrada!')
 
 def listar_reclamacoes(conexao):
-    sql = 'SELECT * FROM equipamentos'
+    sql = 'SELECT * FROM reclamacoes'
 
     resultado = listarBancoDados(conexao,sql)
 
@@ -37,7 +37,7 @@ def listar_reclamacoes(conexao):
 def pesquisar_reclamacao(conexao):
     codigo_procurado = int(input("Digite o código da reclamação: "))
 
-    sql = 'SELECT * FROM equipamentos WHERE código = (%s)'
+    sql = 'SELECT * FROM reclamacoes WHERE código = (%s)'
     dados = (codigo_procurado,)
 
     resultado = listarBancoDados(conexao,sql,dados)
@@ -52,7 +52,7 @@ def atualizar_reclamacao(conexao):
     codigo_procurado = int(input("Digite o código da reclamação: "))
     novo_texto = input("Digite a nova reclamação: ")
     
-    sql = 'UPDATE equipamentos SET reclamação = %s WHERE código = %s'
+    sql = 'UPDATE reclamacoes SET reclamação = %s WHERE código = %s'
     dados = (novo_texto,codigo_procurado)
 
     qnt_linhas = atualizarBancoDados(conexao,sql,dados)
@@ -66,7 +66,7 @@ def atualizar_reclamacao(conexao):
 def remover_reclamacao(conexao):
     codigo_procurado = int(input("Digite o código da reclamação: "))
 
-    sql = 'DELETE FROM equipamentos WHERE código = %s '
+    sql = 'DELETE FROM reclamacoes WHERE código = %s '
     dados = (codigo_procurado,)
 
     qnt_linhas = excluirBancoDados(conexao,sql,dados)
@@ -78,7 +78,7 @@ def remover_reclamacao(conexao):
 
 
 def mostrar_total_reclamacoes(conexao):
-    sql = 'SELECT * FROM equipamentos'
+    sql = 'SELECT * FROM reclamacoes'
 
     resultado = listarBancoDados(conexao,sql)
 
@@ -94,6 +94,7 @@ def main():
     os.getenv("DB_NAME")
 )
     opcao = ""
+    inicializarTabela(conexao)
 
     while opcao != "7":
         mostrar_menu()
