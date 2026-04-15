@@ -30,8 +30,11 @@ def listar_reclamacoes(conexao):
 
     resultado = listarBancoDados(conexao,sql)
 
-    for item in resultado:
-        print(item)
+    if len(resultado) == 0:
+        print('Nenhuma Reclamação Registrada')
+    else:
+        for item in resultado:
+            print(item)
 
 
 def pesquisar_reclamacao(conexao):
